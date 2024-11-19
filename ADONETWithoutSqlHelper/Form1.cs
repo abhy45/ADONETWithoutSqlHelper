@@ -91,5 +91,36 @@ namespace ADONETWithoutSqlHelper
             catch (Exception ex) { }
         }
 
+
+
+        private void SaveNoiseInspectionSpecification()
+        {
+            if (true)
+            {
+                //insert
+                string InsertQuerry = "insert  into TsFc_NoiseInspection (MasterQr,Reclinerfwd_Revnoisedb,LumberUp_Downnoisedb," +
+                    "Reclinertraveltime,LumberTravelTime,ReclinerMotorCurrent,LumberMotor,ReclinerMotorVoltage,LumberMotorVoltage)" +
+                    "values ('hh',1,1,1,1,1,1,1,1,1) ";
+                using (SqlCommand cmd = new SqlCommand(InsertQuerry, MyConn))
+                {
+                    int roweffect = cmd.ExecuteNonQuery();
+                }
+            }
+            else
+            {
+                //update
+                string UpdateQuerry = "update  TsFc_NoiseInspection set Reclinerfwd_Revnoisedb='fff',LumberUp_Downnoisedb='1'," +
+                "Reclinertraveltime='1',LumberTravelTime='1',ReclinerMotorCurrent='1',LumberMotor='1',ReclinerMotorVoltage='1',LumberMotorVoltage='1'" +
+               "where MasterQr='fff'";
+                using (SqlCommand cmd = new SqlCommand(UpdateQuerry, MyConn))
+                {
+                    int roweffect = cmd.ExecuteNonQuery();
+                }
+            }
+
+        }
+
+
+
     }
 }
